@@ -2,7 +2,7 @@
 use strict;
 
 use Test;
-BEGIN { plan tests => 16 };
+BEGIN { plan tests => 22 };
 
 use Tie::URI::Escape;
 ok(1);
@@ -31,7 +31,17 @@ foreach my $char (keys %ESCAPES) {
   ok($o->fetch_encoded, $s);
   ok($o->fetch_encoded, $ESCAPES{$char});
 
+  $o->store( $char );
+  ok(1);
+  $o->append( $char );
+  ok($o->fetch_encoded() eq ($ESCAPES{$char} x 2));
+
+  undef $o;
+
   undef $s;
+  ok(1);
+
+  untie $s;
   ok(1);
 }
 

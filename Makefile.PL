@@ -2,8 +2,8 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     'PM' => {
-       'Entities.pm'  => '$(INST_LIBDIR)/Entities.pm',
-       'Escape.pm'    => '$(INST_LIBDIR)/../URI/Escape.pm',
+       'Entities.pm'  => '$(INST_LIBDIR)/Tie/HTML/Entities.pm',
+       'Escape.pm'    => '$(INST_LIBDIR)/Tie/URI/Escape.pm',
      },
     'NAME'		=> 'Tie-HTML-Entities+URI-Escape',
     'VERSION_FROM'	=> 'Entities.pm',

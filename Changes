@@ -1,6 +1,11 @@
 Revision history for Perl extensions Tie::HTML::Entities and
 Tie::URI::Escape.
 
+0.05  22 Feb 2002
+	- fixed really stupid bug in Makefile.PL for where modules
+	  were installed
+	- added 'append' method to objects
+
 0.04  21 Feb 2002
         - I have nothing better to do tonight
 

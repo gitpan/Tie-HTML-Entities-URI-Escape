@@ -8,7 +8,7 @@ use URI::Escape qw( uri_escape );
 use vars qw($VERSION @ISA);
 @ISA = qw( );
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub new
   {
@@ -28,6 +28,13 @@ sub store
     my $self = shift;
     die "Not a valid object", unless ref $self;
     $$self   = shift;
+  }
+
+sub append
+  {
+    my $self = shift;
+    die "Not a valid object", unless ref $self;
+    $self->store( $self->fetch_raw . shift );
   }
 
 sub fetch_raw
@@ -121,6 +128,15 @@ Returns the raw (unencoded) value.
   $obj->fetch_encoded;
 
 Returns the encoded value.
+
+=item append
+
+  $obj->append( SCALAR );
+
+Appends SCALAR to the existing (raw) value. Why? For consistence with
+C<Tie::HTML::Entities>.  However, the following I<should> work anyway:
+
+  $foo .= "value";
 
 =back
 

@@ -8,7 +8,7 @@ use HTML::Entities qw( encode_entities );
 use vars qw($VERSION @ISA);
 @ISA = qw( );
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 sub new
   {
@@ -28,6 +28,13 @@ sub store
     my $self = shift;
     die "Not a valid object", unless ref $self;
     $$self   = shift;
+  }
+
+sub append
+  {
+    my $self = shift;
+    die "Not a valid object", unless ref $self;
+    $self->store( $self->fetch_raw . shift );
   }
 
 sub fetch_raw
@@ -123,6 +130,15 @@ Returns the raw (unencoded) value.
   $obj->fetch_encoded;
 
 Returns the encoded value.
+
+=item append
+
+  $obj->append( SCALAR );
+
+Appends SCALAR to the existing (raw) value. Why? Because the following will
+not work:
+
+  $text .= "value";
 
 =back
 
