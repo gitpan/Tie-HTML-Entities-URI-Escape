@@ -1,0 +1,14 @@
+use ExtUtils::MakeMaker;
+
+WriteMakefile(
+    'PM' => {
+       'Entities.pm'  => '$(INST_LIBDIR)/Entities.pm',
+       'Escape.pm'    => '$(INST_LIBDIR)/../URI/Escape.pm',
+     },
+    'NAME'		=> 'Tie-HTML-Entities+URI-Escape',
+    'VERSION_FROM'	=> 'Entities.pm',
+    'PREREQ_PM'		=> {
+      'HTML::Entities'  => 0,
+      'URI::Escape'     => 0,
+    },
+);

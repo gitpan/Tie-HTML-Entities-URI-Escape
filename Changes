@@ -1,0 +1,18 @@
+Revision history for Perl extensions Tie::HTML::Entities and
+Tie::URI::Escape.
+
+0.04  21 Feb 2002
+        - I have nothing better to do tonight
+
+0.03  21 Feb 2002
+	- corrected year in Changes file (duh!)
+	- added simple ref checking for methods
+	- added Tie::URI::Escape module as companion
+
+0.02  21 Feb 2002
+	- tweaked version first uploaded to CPAN
+
+0.01  21 Feb 2002
+	- original version; created by h2xs 1.21 with options
+		-v 0.01 -n Tie::HTML::Entities -X -b 5.5.0
+

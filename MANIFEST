@@ -1,0 +1,9 @@
+Changes
+Entities.pm
+Escape.pm
+Makefile.PL
+MANIFEST
+README
+t/html.t
+t/uri.t
+
